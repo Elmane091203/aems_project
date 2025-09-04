@@ -1,0 +1,396 @@
+/* ========================================
+   AEMS - Association des Étudiants de Mitsoudjé au Sénégal
+   Styles personnalisés
+   ======================================== */
+
+/* Variables CSS */
+:root {
+    --aems-green: #1B5E20;
+    --aems-green-light: #2E7D32;
+    --aems-green-dark: #0d4f14;
+    --aems-orange: #FF6F00;
+    --aems-orange-light: #FF8F00;
+    --aems-gray: #F5F5F5;
+    --aems-dark: #212121;
+    --aems-white: #ffffff;
+    --aems-shadow: rgba(0, 0, 0, 0.1);
+    --aems-shadow-green: rgba(27, 94, 32, 0.3);
+    --aems-shadow-orange: rgba(255, 111, 0, 0.3);
+}
+
+/* ========================================
+   Classes utilitaires AEMS
+   ======================================== */
+
+.aems-bg-green {
+    background-color: var(--aems-green);
+}
+
+.aems-text-green {
+    color: var(--aems-green);
+}
+
+.aems-text-orange {
+    color: var(--aems-orange);
+}
+
+.aems-border-orange {
+    border-color: var(--aems-orange);
+}
+
+.aems-hover-orange:hover {
+    color: var(--aems-orange);
+}
+
+/* ========================================
+   Sidebar AEMS
+   ======================================== */
+
+.aems-sidebar {
+    background-color: var(--aems-green);
+    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.aems-sidebar-gradient {
+    background: linear-gradient(180deg, var(--aems-green) 0%, var(--aems-green-dark) 100%);
+}
+
+.aems-sidebar-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100vh;
+}
+
+.aems-sidebar-nav {
+    flex: 1;
+    overflow: scroll;
+    padding-right: 8px;
+}
+
+/* Sidebar non-scrollable - tous les éléments visibles */
+
+/* ========================================
+   Logo AEMS
+   ======================================== */
+
+.aems-logo {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: var(--aems-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 6px 12px var(--aems-shadow);
+    overflow: hidden;
+    border: 4px solid var(--aems-white);
+}
+
+.aems-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.aems-logo-shadow {
+    box-shadow: 0 8px 25px var(--aems-shadow-green);
+}
+
+/* ========================================
+   Navigation AEMS
+   ======================================== */
+
+.aems-nav-link {
+    color: var(--aems-white);
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+.aems-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--aems-white);
+    transform: translateX(4px);
+}
+
+.aems-nav-link.active {
+    background-color: var(--aems-orange);
+    color: var(--aems-white);
+    box-shadow: 0 2px 8px var(--aems-shadow-orange);
+}
+
+.aems-nav-link span {
+    margin-left: 0.5rem;
+}
+
+.aems-nav-icon {
+    width: 20px;
+    text-align: center;
+}
+
+/* ========================================
+   Boutons AEMS
+   ======================================== */
+
+.aems-year-button {
+    background-color: var(--aems-green);
+    color: var(--aems-white);
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.aems-year-button:hover {
+    background-color: var(--aems-green-light);
+    color: var(--aems-white);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   Header AEMS
+   ======================================== */
+
+.aems-header {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 1px solid #e9ecef;
+}
+
+/* ========================================
+   Contenu principal AEMS
+   ======================================== */
+
+.aems-main-content {
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    min-height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.aems-main-wrapper {
+    margin-left: auto; /* Largeur de la sidebar fixe */
+    width: 75%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   Cartes AEMS
+   ======================================== */
+
+.aems-card {
+    background: var(--aems-white);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px var(--aems-shadow);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.aems-card:hover {
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   Avatar utilisateur AEMS
+   ======================================== */
+
+.aems-user-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--aems-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aems-white);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ========================================
+   Hero section AEMS
+   ======================================== */
+
+.aems-hero {
+    background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(27, 94, 32, 0.8)), url("{{ asset('images/hero-bg.jpg') }}");
+    background-size: cover;
+    background-position: center;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--aems-white);
+}
+
+/* ========================================
+   Responsive Design AEMS
+   ======================================== */
+
+@media (max-width: 1024px) {
+    .aems-sidebar {
+        width: 280px;
+    }
+    
+    .aems-main-content,
+    .aems-main-wrapper {
+        margin-left: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .aems-sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        z-index: 1000;
+    }
+    
+    .aems-main-content,
+    .aems-main-wrapper {
+        margin-left: 0;
+    }
+    
+    .aems-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .aems-nav-link {
+        padding: 0.5rem 0.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .aems-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .aems-nav-link {
+        font-size: 0.875rem;
+    }
+    
+    .aems-sidebar-content {
+        padding: 1rem;
+    }
+}
+
+/* ========================================
+   Animations AEMS
+   ======================================== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.aems-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.aems-slide-in-left {
+    animation: slideInLeft 0.5s ease-out;
+}
+
+/* ========================================
+   États de chargement AEMS
+   ======================================== */
+
+.aems-loading {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: var(--aems-white);
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   Notifications AEMS
+   ======================================== */
+
+.aems-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 12px var(--aems-shadow);
+    z-index: 1000;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.aems-notification.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.aems-notification.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.aems-notification.warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeaa7;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
