@@ -3,8 +3,5 @@
   "build": {
     "builder": "NIXPACKS",
     "buildCommand": "npm install && npm run build:production"
-  },
-  "deploy": {
-    "startCommand": "bash start.sh"
   }
 }
