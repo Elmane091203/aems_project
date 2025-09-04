@@ -74,7 +74,7 @@
 
 .aems-sidebar-nav {
     flex: 1;
-    overflow: scroll;
+    overflow: auto;
     padding-right: 8px;
 }
 

@@ -27,7 +27,7 @@
                 <div class="flex items-center space-x-4">
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
                         {{ $event->event_type === 'culturelle' ? 'bg-purple-100 text-purple-800' : 
-                           ($event->event_type === 'sociale' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800')) }}">
+                           ($event->event_type === 'sociale' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800') }}">
                         {{ ucfirst($event->event_type) }}
                     </span>
                     
@@ -166,7 +166,7 @@
 
             <!-- Actions -->
             @auth
-                @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $event->user_id === auth()->id()))
+                @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $event->user_id === auth()->id())))
                     <div class="flex items-center justify-between pt-6 border-t">
                         <a href="{{ route('events.index') }}" class="text-gray-600 hover:text-gray-800">
                             ← Retour aux événements

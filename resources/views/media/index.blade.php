@@ -102,7 +102,7 @@
                         @endif
 
                         @auth
-                            @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $item->user_id === auth()->id()))
+                            @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $item->user_id === auth()->id())))
                                 <div class="flex items-center justify-between mt-3 pt-2 border-t">
                                     <a href="{{ route('media.edit', $item) }}" class="text-xs text-blue-600 hover:text-blue-800">
                                         Modifier

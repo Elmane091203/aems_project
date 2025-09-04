@@ -112,7 +112,7 @@
                         </div>
 
                         @auth
-                            @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $post->user_id === auth()->id()))
+                            @if(auth()->check() && (auth()->user()->isAdmin() || (auth()->user()->isMember() && $post->user_id === auth()->id())))
                                 <div class="flex items-center justify-between mt-4 pt-4 border-t">
                                     <a href="{{ route('posts.edit', $post) }}" class="text-sm text-blue-600 hover:text-blue-800">
                                         Modifier
