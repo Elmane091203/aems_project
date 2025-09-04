@@ -13,7 +13,7 @@
 
     <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/css/aems.css', 'resources/js/app.js'])
-        <link rel="stylesheet" href="{{ secure_asset('css/aems-inline.css') }}">
+        <link rel="stylesheet" href="https://aems.up.railway.app/css/aems-inline.css">
 
     </head>
 <body class="font-sans antialiased bg-gray-50">
@@ -24,7 +24,7 @@
                 <!-- Logo AEMS -->
                 <div class="text-center mb-8">
                     <div class="aems-logo aems-logo-shadow mb-4">
-                                                        <img src="{{ secure_asset('logo.jpg') }}" alt="Logo AEMS" />
+                                                        <img src="https://aems.up.railway.app/logo.jpg" alt="Logo AEMS" />
                     </div>
                     <div class="text-white">
                         <h1 class="text-lg font-bold mb-1">AEMS</h1>

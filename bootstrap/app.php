@@ -15,18 +15,12 @@ return Application::configure(basePath: dirname(__DIR__))
             'role' => \App\Http\Middleware\CheckRole::class,
             'admin.or.member' => \App\Http\Middleware\CheckAdminOrMember::class,
             'maintenance' => \App\Http\Middleware\CheckMaintenanceMode::class,
+            'force.https' => \App\Http\Middleware\ForceHttps::class,
         ]);
         
         $middleware->web(append: [
             \App\Http\Middleware\CheckMaintenanceMode::class,
         ]);
-        
-        // Force HTTPS in production
-        if (config('app.force_https')) {
-            $middleware->web(prepend: [
-                \App\Http\Middleware\ForceHttps::class,
-            ]);
-        }
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
