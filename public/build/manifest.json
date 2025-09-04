@@ -1,0 +1,24 @@
+{
+  "resources/css/aems.css": {
+    "file": "assets/aems-CePOnq5r.css",
+    "src": "resources/css/aems.css",
+    "isEntry": true,
+    "names": [
+      "aems.css"
+    ]
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-BfL7IG7-.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-PZj53Sw7.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}
