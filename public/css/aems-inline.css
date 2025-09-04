@@ -1,0 +1,160 @@
+/* CSS AEMS Inline pour Railway */
+:root {
+    --aems-green: #1B5E20;
+    --aems-green-light: #2E7D32;
+    --aems-orange: #FF6F00;
+    --aems-orange-light: #FF8F00;
+    --aems-gray: #F5F5F5;
+    --aems-dark: #212121;
+    --aems-green-dark: #0d4f14;
+    --aems-white: #ffffff;
+}
+
+/* Sidebar AEMS */
+.aems-sidebar {
+    background: linear-gradient(135deg, var(--aems-green-dark) 0%, var(--aems-green) 100%);
+    width: 320px;
+    min-height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    overflow: hidden;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.aems-sidebar-content {
+    padding: 1.5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Logo AEMS */
+.aems-logo {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1rem;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    border: 4px solid var(--aems-white);
+}
+
+.aems-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Navigation AEMS */
+.aems-sidebar-nav {
+    flex: 1;
+    overflow: visible;
+    padding-right: 8px;
+}
+
+.aems-nav-link {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    margin-bottom: 0.5rem;
+    color: var(--aems-white);
+    text-decoration: none;
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.aems-nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateX(4px);
+}
+
+.aems-nav-link.active {
+    background-color: var(--aems-orange);
+    box-shadow: 0 4px 12px rgba(255, 111, 0, 0.3);
+}
+
+.aems-nav-icon {
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+/* Main Content */
+.aems-main-wrapper {
+    margin-left: 320px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.aems-main-content {
+    flex: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Header */
+.aems-header {
+    background: var(--aems-white);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e5e7eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Cards */
+.aems-card {
+    background: var(--aems-white);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+/* Buttons */
+.aems-year-button {
+    background: var(--aems-orange);
+    color: var(--aems-white);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.aems-year-button:hover {
+    background: var(--aems-orange-light);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 111, 0, 0.3);
+}
+
+/* Text Colors */
+.aems-text-green {
+    color: var(--aems-green);
+}
+
+.aems-text-orange {
+    color: var(--aems-orange);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .aems-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .aems-main-wrapper {
+        margin-left: 0;
+    }
+    
+    .aems-main-content {
+        padding: 1rem;
+    }
+}

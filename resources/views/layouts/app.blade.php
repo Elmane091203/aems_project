@@ -13,6 +13,7 @@
 
     <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/css/aems.css', 'resources/js/app.js'])
+        <link rel="stylesheet" href="{{ asset('css/aems-inline.css') }}">
 
     </head>
 <body class="font-sans antialiased bg-gray-50">
