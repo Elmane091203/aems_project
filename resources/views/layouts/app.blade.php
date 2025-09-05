@@ -13,13 +13,23 @@
 
     <!-- Styles -->
         @vite(['resources/css/app.css', 'resources/css/aems.css', 'resources/js/app.js'])
-        {{-- <link rel="stylesheet" href="https://aems.up.railway.app/css/aems-inline.css"> --}}
+        <link rel="stylesheet" href="https://aems.up.railway.app/css/aems-inline.css">
 
     </head>
 <body class="font-sans antialiased bg-gray-50">
+    <!-- Mobile Menu Toggle -->
+    <button id="mobileMenuToggle" class="mobile-menu-toggle">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+    </button>
+    
+    <!-- Mobile Overlay -->
+    <div id="mobileOverlay" class="mobile-overlay"></div>
+    
     <div class="min-h-screen flex">
         <!-- Sidebar -->
-        <div class="aems-sidebar aems-sidebar-gradient flex-shrink-0">
+        <div id="sidebar" class="aems-sidebar aems-sidebar-gradient flex-shrink-0">
             <div class="aems-sidebar-content p-6">
                 <!-- Logo AEMS -->
                 <div class="text-center mb-8">
@@ -190,5 +200,46 @@
     </div>
 
     @stack('scripts')
+    
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const sidebar = document.getElementById('sidebar');
+            const mobileOverlay = document.getElementById('mobileOverlay');
+            
+            function toggleMobileMenu() {
+                sidebar.classList.toggle('mobile-open');
+                mobileOverlay.classList.toggle('show');
+            }
+            
+            function closeMobileMenu() {
+                sidebar.classList.remove('mobile-open');
+                mobileOverlay.classList.remove('show');
+            }
+            
+            // Toggle menu
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+            
+            // Close menu when clicking overlay
+            mobileOverlay.addEventListener('click', closeMobileMenu);
+            
+            // Close menu when clicking outside on mobile
+            document.addEventListener('click', function(e) {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !mobileMenuToggle.contains(e.target)) {
+                        closeMobileMenu();
+                    }
+                }
+            });
+            
+            // Close menu on window resize
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) {
+                    closeMobileMenu();
+                }
+            });
+        });
+    </script>
     </body>
 </html>

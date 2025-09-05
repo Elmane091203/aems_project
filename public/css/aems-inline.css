@@ -113,6 +113,29 @@
     border-radius: 0.75rem;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     border: 1px solid #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+/* Grid responsive */
+.aems-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.aems-grid-1 { grid-template-columns: 1fr; }
+.aems-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.aems-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.aems-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+@media (max-width: 1024px) {
+    .aems-grid-4 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-3 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+    .aems-grid-4,
+    .aems-grid-3,
+    .aems-grid-2 { grid-template-columns: 1fr; }
 }
 
 /* Buttons */
@@ -143,11 +166,27 @@
     color: var(--aems-orange);
 }
 
-/* Responsive */
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .aems-sidebar {
+        width: 280px;
+    }
+    
+    .aems-main-wrapper {
+        margin-left: 280px;
+    }
+}
+
 @media (max-width: 768px) {
     .aems-sidebar {
         transform: translateX(-100%);
         transition: transform 0.3s ease;
+        width: 100%;
+        z-index: 9999;
+    }
+    
+    .aems-sidebar.mobile-open {
+        transform: translateX(0);
     }
     
     .aems-main-wrapper {
@@ -156,5 +195,82 @@
     
     .aems-main-content {
         padding: 1rem;
+    }
+    
+    .aems-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .aems-nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
+    .aems-nav-icon {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .aems-main-content {
+        padding: 0.75rem;
+    }
+    
+    .aems-card {
+        margin-bottom: 1rem;
+    }
+    
+    .aems-logo {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .aems-sidebar-content {
+        padding: 1rem;
+    }
+    
+    .aems-nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10000;
+    background: var(--aems-green);
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+}
+
+/* Overlay pour mobile */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+}
+
+@media (max-width: 768px) {
+    .mobile-overlay.show {
+        display: block;
     }
 }
