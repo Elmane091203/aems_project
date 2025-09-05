@@ -4,10 +4,10 @@
 @section('page-title', 'Médias')
 
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="w-full">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-6">
-        <h1 class="text-3xl font-bold aems-text-green">📸 Médias</h1>
+    <div class="aems-header mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold aems-text-green">📸 Médias</h1>
         @auth
             @if(auth()->check() && (auth()->user()->isAdmin() || auth()->user()->isMember()))
                 <a href="{{ route('media.create') }}" class="aems-year-button">
@@ -19,7 +19,7 @@
 
     <!-- Filters -->
     <div class="aems-card p-6 mb-6">
-        <form method="GET" class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <form method="GET" class="aems-grid aems-grid-4 gap-4">
             <div>
                 <label class="block text-sm font-medium text-gray-700 mb-2">Type de média</label>
                 <select name="file_type" class="w-full border border-gray-300 rounded-lg px-3 py-2">

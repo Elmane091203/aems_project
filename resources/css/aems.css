@@ -52,12 +52,13 @@
     height: 100vh;
     overflow: hidden;
     display: flex;
-    width: 25%;
+    width: 320px;
     flex-direction: column;
     position: fixed;
     left: 0;
     top: 0;
     z-index: 1000;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
 }
 
 .aems-sidebar-gradient {
@@ -154,18 +155,37 @@
     background-color: var(--aems-green);
     color: var(--aems-white);
     border: none;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
     border-radius: 0.5rem;
     font-weight: 600;
     transition: all 0.3s ease;
     text-decoration: none;
     display: inline-block;
+    font-size: 0.875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .aems-year-button:hover {
-    background-color: var(--aems-green-light);
+    background-color: var(--aems-orange);
     color: var(--aems-white);
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 640px) {
+    .aems-year-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .aems-year-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
 }
 
 /* ========================================
@@ -175,6 +195,30 @@
 .aems-header {
     background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     border-bottom: 1px solid #e9ecef;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.aems-header h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--aems-green);
+}
+
+@media (max-width: 640px) {
+    .aems-header {
+        padding: 0.75rem 1rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .aems-header h1 {
+        font-size: 1.25rem;
+    }
 }
 
 /* ========================================
@@ -183,17 +227,18 @@
 
 .aems-main-content {
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    min-height: 100vh;
+    flex: 1;
+    padding: 1.5rem;
     overflow-y: auto;
     overflow-x: hidden;
 }
 
 .aems-main-wrapper {
-    margin-left: auto; /* Largeur de la sidebar fixe */
-    width: 75%;
+    margin-left: 320px; /* Largeur de la sidebar fixe */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    width: calc(100% - 320px);
 }
 
 /* ========================================
@@ -206,10 +251,117 @@
     box-shadow: 0 4px 6px var(--aems-shadow);
     overflow: hidden;
     transition: transform 0.3s ease;
+    margin-bottom: 1rem;
 }
 
 .aems-card:hover {
     transform: translateY(-4px);
+}
+
+/* Cartes d'événements */
+.event-card {
+    background: var(--aems-white);
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e9ecef;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+}
+
+.event-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.event-header {
+    background: var(--aems-green);
+    color: white;
+    padding: 0.75rem 1rem;
+    margin: -1.5rem -1.5rem 1rem -1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.event-tag {
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.event-tag.cultural {
+    background: #e0e7ff;
+    color: #3730a3;
+}
+
+.event-tag.upcoming {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.event-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--aems-green);
+    margin-bottom: 0.5rem;
+}
+
+.event-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.event-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+.event-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.event-action {
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.event-action.edit {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.event-action.edit:hover {
+    background: #bfdbfe;
+}
+
+.event-action.delete {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.event-action.delete:hover {
+    background: #fecaca;
 }
 
 /* ========================================
@@ -234,7 +386,7 @@
    ======================================== */
 
 .aems-hero {
-    background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(27, 94, 32, 0.8)), url("{{ asset('images/hero-bg.jpg') }}");
+    background: linear-gradient(rgba(27, 94, 32, 0.8), rgba(27, 94, 32, 0.8)), url("../../images/hero-bg.jpg");
     background-size: cover;
     background-position: center;
     min-height: 60vh;
@@ -251,18 +403,19 @@
 @media (max-width: 1024px) {
     .aems-sidebar {
         width: 280px;
+        height: 100%;
     }
     
     .aems-main-content,
     .aems-main-wrapper {
-        margin-left: 280px;
+        margin-left: auto;
     }
 }
 
 @media (max-width: 768px) {
     .aems-sidebar {
         width: 100%;
-        height: auto;
+        height: 100%;
         position: relative;
         z-index: 1000;
     }
@@ -392,5 +545,420 @@
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+/* ========================================
+   Grid System
+   ======================================== */
+
+.aems-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.aems-grid-1 { grid-template-columns: 1fr; }
+.aems-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.aems-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.aems-grid-4 { grid-template-columns: repeat(4, 1fr); }
+.aems-grid-5 { grid-template-columns: repeat(5, 1fr); }
+.aems-grid-6 { grid-template-columns: repeat(6, 1fr); }
+.aems-grid-7 { grid-template-columns: repeat(7, 1fr); }
+
+/* Formulaires responsifs */
+.aems-form {
+    width: 100%;
+}
+
+.aems-form-group {
+    margin-bottom: 1rem;
+}
+
+.aems-form-label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.aems-form-input,
+.aems-form-select,
+.aems-form-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+    background: white;
+}
+
+.aems-form-input:focus,
+.aems-form-select:focus,
+.aems-form-textarea:focus {
+    outline: none;
+    border-color: var(--aems-green);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.aems-form-textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+/* Styles pour les formulaires existants */
+.aems-form input[type="text"],
+.aems-form input[type="email"],
+.aems-form input[type="password"],
+.aems-form input[type="date"],
+.aems-form input[type="datetime-local"],
+.aems-form input[type="file"],
+.aems-form select,
+.aems-form textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    transition: border-color 0.2s ease;
+    background: white;
+}
+
+.aems-form input:focus,
+.aems-form select:focus,
+.aems-form textarea:focus {
+    outline: none;
+    border-color: var(--aems-green);
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.1);
+}
+
+.aems-form label {
+    display: block;
+    font-weight: 500;
+    color: #374151;
+    margin-bottom: 0.5rem;
+    font-size: 0.875rem;
+}
+
+.aems-form .mb-6 {
+    margin-bottom: 1.5rem;
+}
+
+.aems-form .grid {
+    display: grid;
+    gap: 1rem;
+}
+
+.aems-form .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media (max-width: 768px) {
+    .aems-form .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Boutons de formulaire */
+.aems-form-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.aems-form-button {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    border: none;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.aems-form-button.primary {
+    background: var(--aems-green);
+    color: white;
+}
+
+.aems-form-button.primary:hover {
+    background: var(--aems-orange);
+    transform: translateY(-1px);
+}
+
+.aems-form-button.secondary {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #d1d5db;
+}
+
+.aems-form-button.secondary:hover {
+    background: #e5e7eb;
+}
+
+.aems-form-button.danger {
+    background: #ef4444;
+    color: white;
+}
+
+.aems-form-button.danger:hover {
+    background: #dc2626;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   Responsive Design - Mobile First
+   ======================================== */
+
+/* Mobile Menu Toggle */
+.mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 10000;
+    background: var(--aems-green);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover {
+    background: var(--aems-green-light);
+    transform: scale(1.05);
+}
+
+/* Mobile Overlay */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 9998;
+    backdrop-filter: blur(2px);
+}
+
+.mobile-overlay.show {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 1200px) {
+    .aems-sidebar {
+        width: 280px;
+    }
+    
+    .aems-main-wrapper {
+        margin-left: 280px;
+        width: calc(100% - 280px);
+    }
+    
+    .aems-grid-7 { grid-template-columns: repeat(6, 1fr); }
+    .aems-grid-6 { grid-template-columns: repeat(5, 1fr); }
+    .aems-grid-5 { grid-template-columns: repeat(4, 1fr); }
+    .aems-grid-4 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-2 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 1024px) {
+    .aems-sidebar {
+        width: 260px;
+    }
+    
+    .aems-main-wrapper {
+        margin-left: 260px;
+        width: calc(100% - 260px);
+    }
+    
+    .aems-grid-7 { grid-template-columns: repeat(5, 1fr); }
+    .aems-grid-6 { grid-template-columns: repeat(4, 1fr); }
+    .aems-grid-5 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-4 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .aems-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    
+    .aems-card {
+        padding: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .aems-sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        width: 100%;
+        max-width: 320px;
+        z-index: 9999;
+    }
+    
+    .aems-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+    
+    .aems-main-wrapper {
+        margin-left: 0;
+        width: 100%;
+    }
+    
+    .aems-main-content {
+        padding: 1rem;
+    }
+    
+    .aems-logo {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .aems-nav-link {
+        padding: 0.75rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .aems-nav-icon {
+        font-size: 1.1rem;
+    }
+    
+    .aems-grid-7 { grid-template-columns: repeat(4, 1fr); }
+    .aems-grid-6 { grid-template-columns: repeat(3, 1fr); }
+    .aems-grid-5 { grid-template-columns: repeat(2, 1fr); }
+    .aems-grid-4 { grid-template-columns: repeat(2, 1fr); }
+    .aems-grid-3 { grid-template-columns: repeat(2, 1fr); }
+    .aems-grid-2 { grid-template-columns: 1fr; }
+    
+    .aems-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .aems-header {
+        padding: 0.75rem 1rem;
+    }
+    
+    .aems-sidebar-content {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .aems-main-content {
+        padding: 0.75rem;
+    }
+
+    .aems-card {
+        padding: 0.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .aems-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .aems-sidebar-content {
+        padding: 1rem;
+    }
+
+    .aems-nav-link {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+
+    .aems-nav-icon {
+        font-size: 1rem;
+    }
+
+    .aems-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .aems-year-button {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .aems-form-actions {
+        flex-direction: column;
+    }
+
+    .aems-form-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .event-actions {
+        flex-direction: column;
+    }
+
+    .event-action {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .aems-main-content {
+        padding: 0.5rem;
+    }
+    
+    .aems-card {
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .aems-logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .aems-sidebar-content {
+        padding: 0.75rem;
+    }
+    
+    .aems-nav-link {
+        padding: 0.4rem 0.5rem;
+        font-size: 0.85rem;
+    }
+    
+    .aems-nav-icon {
+        font-size: 0.9rem;
+    }
+    
+    .aems-header h1 {
+        font-size: 1.25rem;
+    }
+    
+    .aems-year-button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
+    .mobile-menu-toggle {
+        padding: 0.5rem;
+        top: 0.75rem;
+        left: 0.75rem;
     }
 }

@@ -4,7 +4,7 @@
 @section('page-title', 'Modifier le Média')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card p-8">
         <div class="mb-6">
             <h1 class="text-3xl font-bold aems-text-green mb-2">✏️ Modifier le média</h1>

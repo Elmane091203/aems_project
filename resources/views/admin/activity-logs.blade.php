@@ -4,7 +4,7 @@
 @section('page-title', 'Logs d\'Activité')
 
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="w-full">
     <!-- Header -->
     <div class="flex items-center justify-between mb-6">
         <h1 class="text-3xl font-bold aems-text-green">📊 Logs d'Activité</h1>

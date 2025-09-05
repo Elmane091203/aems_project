@@ -4,7 +4,7 @@
 @section('page-title', 'Mon Profil')
 
 @section('content')
-<div class="max-w-4xl mx-auto space-y-6">
+<div class="w-full space-y-6">
     <div class="aems-card p-6">
         <div class="max-w-xl">
             @include('profile.partials.update-profile-information-form')

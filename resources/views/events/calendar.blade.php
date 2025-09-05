@@ -4,10 +4,10 @@
 @section('page-title', 'Calendrier')
 
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="w-full">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-6">
-        <h1 class="text-3xl font-bold aems-text-green">📅 Calendrier des Événements</h1>
+    <div class="aems-header mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold aems-text-green">📅 Calendrier des Événements</h1>
         <div class="flex space-x-3">
             <a href="{{ route('events.index') }}" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-lg">
                 Vue Liste

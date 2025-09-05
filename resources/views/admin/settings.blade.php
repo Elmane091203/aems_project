@@ -4,7 +4,7 @@
 @section('page-title', 'Paramètres')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="mb-6">
         <h1 class="text-3xl font-bold aems-text-green">⚙️ Paramètres de la plateforme</h1>
         <p class="text-gray-600">Configurez les paramètres généraux de la plateforme AEMS</p>

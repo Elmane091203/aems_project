@@ -4,7 +4,7 @@
 @section('page-title', 'Article')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card overflow-hidden">
         @if($post->featured_image)
             <div class="aspect-video overflow-hidden">

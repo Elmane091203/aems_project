@@ -1,0 +1,94 @@
+/* ========================================
+   AEMS - Responsive Redesign
+   Corrige le zoom et améliore l'ergonomie mobile
+   ======================================== */
+
+/* Sidebar flottante en mobile */
+@media (max-width: 768px) {
+    .aems-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 80%;           /* occupe 80% de l’écran */
+        max-width: 260px;     /* limite la taille max */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 10001;
+    }
+    .aems-sidebar.mobile-open {
+        transform: translateX(0);
+    }
+
+    /* Contenu prend toute la largeur */
+    .aems-main-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Logo plus petit */
+    .aems-logo {
+        width: 70px;
+        height: 70px;
+    }
+
+    /* Titres + Header */
+    .aems-header h1 {
+        font-size: 1.2rem;
+    }
+
+    /* Cartes */
+    .aems-card,
+    .event-card {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    .event-title {
+        font-size: 1rem;
+    }
+}
+
+/* Très petit écran (téléphone <480px) */
+@media (max-width: 480px) {
+    .aems-sidebar {
+        width: 70%;
+        max-width: 220px;
+    }
+
+    .aems-logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .aems-header h1 {
+        font-size: 1rem;
+    }
+
+    .aems-main-content {
+        padding: 0.75rem;
+    }
+
+    .aems-card,
+    .event-card {
+        padding: 0.75rem;
+        font-size: 0.85rem;
+    }
+    .event-title {
+        font-size: 0.9rem;
+    }
+}
+
+/* Overlay noir derrière la sidebar */
+.mobile-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 10000; /* sous la sidebar */
+}
+.mobile-overlay.show {
+    display: block;
+}

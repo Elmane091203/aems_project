@@ -4,10 +4,10 @@
 @section('page-title', 'À propos')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card p-8">
         <div class="text-center mb-8">
-            <h1 class="text-4xl font-bold aems-text-green mb-4">À propos de l'AEMS</h1>
+            <h1 class="text-2xl md:text-3xl lg:text-4xl font-bold aems-text-green mb-4">À propos de l'AEMS</h1>
             <div class="w-24 h-1 bg-orange-400 mx-auto"></div>
         </div>
 

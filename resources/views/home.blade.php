@@ -7,18 +7,18 @@
 <!-- Hero Section -->
 <div class="aems-hero rounded-lg mb-8">
     <div class="text-center">
-        <h1 class="text-5xl font-bold mb-4">Découvrez</h1>
-        <p class="text-xl max-w-2xl mx-auto">
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">Découvrez</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto px-4">
             nos moments marquants en photos et vidéos, depuis la création de l'association.
         </p>
     </div>
 </div>
 
 <!-- Featured Content -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+<div class="aems-grid aems-grid-2 gap-6 md:gap-8 mb-8">
     <!-- Featured Posts -->
     <div class="aems-card p-6">
-        <h2 class="text-2xl font-bold aems-text-green mb-4">📰 Derniers Articles</h2>
+        <h2 class="text-xl md:text-2xl font-bold aems-text-green mb-4">📰 Derniers Articles</h2>
         @if($featuredPosts->count() > 0)
             <div class="space-y-4">
                 @foreach($featuredPosts as $post)
@@ -44,7 +44,7 @@
 
     <!-- Upcoming Events -->
     <div class="aems-card p-6">
-        <h2 class="text-2xl font-bold aems-text-green mb-4">📅 Prochains Événements</h2>
+        <h2 class="text-xl md:text-2xl font-bold aems-text-green mb-4">📅 Prochains Événements</h2>
         @if($upcomingEvents->count() > 0)
             <div class="space-y-4">
                 @foreach($upcomingEvents as $event)
@@ -72,8 +72,8 @@
 <!-- Featured Media Gallery -->
 @if($featuredMedia->count() > 0)
     <div class="aems-card p-6">
-        <h2 class="text-2xl font-bold aems-text-green mb-6">📸 Galerie en vedette</h2>
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <h2 class="text-xl md:text-2xl font-bold aems-text-green mb-6">📸 Galerie en vedette</h2>
+        <div class="aems-grid aems-grid-6 gap-4">
             @foreach($featuredMedia as $media)
                 <div class="aspect-square overflow-hidden rounded-lg">
                     @if($media->file_type === 'image')
@@ -91,7 +91,7 @@
 @endif
 
 <!-- Quick Access -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+<div class="aems-grid aems-grid-3 gap-4 md:gap-6 mt-8">
     <a href="{{ route('photos') }}" class="aems-card p-6 text-center hover:shadow-lg transition-shadow">
         <div class="text-4xl mb-3">📸</div>
         <h3 class="text-xl font-semibold aems-text-green mb-2">Photos</h3>

@@ -4,7 +4,7 @@
 @section('page-title', 'Détails Utilisateur')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card p-8">
         <!-- User Header -->
         <div class="flex items-center justify-between mb-8">

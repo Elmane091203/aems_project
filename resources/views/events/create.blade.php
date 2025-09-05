@@ -4,14 +4,14 @@
 @section('page-title', 'Nouvel Événement')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card p-8">
         <div class="mb-6">
             <h1 class="text-3xl font-bold aems-text-green mb-2">📅 Créer un nouvel événement</h1>
             <p class="text-gray-600">Organisez et planifiez vos événements pour la communauté AEMS</p>
         </div>
 
-        <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data">
+        <form method="POST" action="{{ route('events.store') }}" enctype="multipart/form-data" class="aems-form">
             @csrf
             
             <!-- Title -->

@@ -4,10 +4,10 @@
 @section('page-title', 'Gestion des Utilisateurs')
 
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="w-full">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-6">
-        <h1 class="text-3xl font-bold aems-text-green">👥 Gestion des Utilisateurs</h1>
+    <div class="aems-header mb-6">
+        <h1 class="text-2xl md:text-3xl font-bold aems-text-green">👥 Gestion des Utilisateurs</h1>
         <a href="{{ route('admin.users.create') }}" class="aems-year-button">
             Nouvel Utilisateur
         </a>
@@ -100,7 +100,7 @@
                             <td class="px-6 py-4 whitespace-nowrap">
                                 <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium
                                     {{ $user->role === 'admin' ? 'bg-red-100 text-red-800' : 
-                                       ($user->role === 'member' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800')) }}">
+                                       ($user->role === 'member' ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800') }}">
                                     {{ $user->role === 'admin' ? 'Administrateur' : 
                                        ($user->role === 'member' ? 'Membre' : 'Visiteur') }}
                                 </span>

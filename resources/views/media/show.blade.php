@@ -4,7 +4,7 @@
 @section('page-title', 'Média')
 
 @section('content')
-<div class="max-w-4xl mx-auto">
+<div class="w-full">
     <div class="aems-card overflow-hidden">
         <div class="p-8">
             <!-- Media Display -->

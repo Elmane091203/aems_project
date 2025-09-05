@@ -4,12 +4,12 @@
 @section('page-title', 'Vidéos')
 
 @section('content')
-<div class="max-w-6xl mx-auto">
+<div class="w-full">
     <!-- Year Filter -->
     <div class="aems-card p-6 mb-8">
-        <h2 class="text-2xl font-bold aems-text-green mb-6">🎥 Archives Vidéos</h2>
+        <h2 class="text-xl md:text-2xl font-bold aems-text-green mb-6">🎥 Archives Vidéos</h2>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4">
+        <div class="aems-grid aems-grid-7 gap-4">
             @foreach($availableYears as $availableYear)
                 <a href="{{ route('videos', ['year' => $availableYear]) }}" 
                    class="aems-year-button text-center {{ $year == $availableYear ? 'bg-orange-500' : '' }}">
@@ -21,7 +21,7 @@
 
     <!-- Videos Grid -->
     @if($videos->count() > 0)
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="aems-grid aems-grid-3 gap-4 md:gap-6">
             @foreach($videos as $video)
                 <div class="aems-card overflow-hidden">
                     <div class="aspect-video overflow-hidden">
